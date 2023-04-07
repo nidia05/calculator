@@ -2,6 +2,19 @@
 #include <stdio.h>
 #include <math.h>
 
+double avg(int n) {
+    double sum = 0, a;
+    printf("Enter the numbers number: ");
+
+    for (int i = 0; i < n; i++) {
+        scanf("%lf", &a);
+        sum += a;
+    }
+
+    return sum / n;
+}
+
+
 float sum(float a, float b) {
     return a + b;
 }
@@ -39,6 +52,8 @@ int main() {
     printf("4. Division\n");
     printf("5. Find the square root\n");
     printf("6. Raise to power\n");
+    printf("7. Calculate the average\n");
+
     scanf("%d", &operation);
 
 
@@ -50,7 +65,7 @@ int main() {
     printf("Enter the second number: ");
     scanf("%f", &b);
     }
-    else
+    else if (operation==5)
     {
     printf("Enter the number: ");
     scanf("%f", &a);
@@ -75,6 +90,13 @@ int main() {
             printf("Square root of %.2f = %.2f\n", a, square_root(a));
     else if (operation == 6)
         printf("%.2f ^ %d = %.2f\n", a, (int)b, power(a,b));
+    else if (operation==7)
+    {
+        int n;
+        printf("How many numbers do you want to average? ");
+        scanf("%d",&n);
+        printf("The average is: %.2lf\n", avg(n));
+    }
     else
         printf("Invalid operation.\n");
 
